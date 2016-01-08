@@ -121,7 +121,9 @@
                 [newObject setObject:birthDate forKey:@"Birthday"];
                 [newObject  setObject:phoneNumber forKey:@"PhoneNumber"];
                 
-                [newObject save];  
+                [newObject saveInBackground];
+                
+                [self.navigationController popToRootViewControllerAnimated:YES];
                 
             
             }
@@ -134,7 +136,7 @@
 }
 
 
-
+#pragma mark - alert message
 -(void)alertMessage: (NSString *)title message:(NSString *)message   {
     
     

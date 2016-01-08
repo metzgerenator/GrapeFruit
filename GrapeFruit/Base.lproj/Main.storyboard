@@ -60,10 +60,10 @@
             </objects>
             <point key="canvasLocation" x="1036.5" y="428.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Log In View Controller-->
         <scene sceneID="6Tt-S1-h2u">
             <objects>
-                <viewController id="Uhj-dZ-wJH" sceneMemberID="viewController">
+                <viewController id="Uhj-dZ-wJH" customClass="logInViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="wHe-kc-jRD"/>
                         <viewControllerLayoutGuide type="bottom" id="pfQ-Pf-5EQ"/>
@@ -110,6 +110,9 @@
                                     <constraint firstAttribute="width" constant="49" id="x8k-cZ-GGw"/>
                                 </constraints>
                                 <state key="normal" title="Login"/>
+                                <connections>
+                                    <action selector="loginButton:" destination="Uhj-dZ-wJH" eventType="touchUpInside" id="XH1-07-7Bw"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -130,6 +133,10 @@
                             <constraint firstItem="TbO-v5-wJ6" firstAttribute="leading" secondItem="MBf-Rs-GBC" secondAttribute="leadingMargin" constant="59" id="zcT-hu-M2g"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="emailTextField" destination="ek3-xT-Wqc" id="gi0-8Q-EfZ"/>
+                        <outlet property="passWordTextField" destination="s3J-44-0xs" id="DJj-Ly-UWe"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ogU-Lg-kK4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -148,30 +155,30 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="E3e-Rv-y7Q">
-                                <rect key="frame" x="0.0" y="64" width="375" height="210"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="403"/>
                                 <subviews>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Username" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="jt9-Zg-GlH">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8m-H3-jIy">
-                                        <rect key="frame" x="0.0" y="30" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="58" width="375" height="57"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bD6-nj-0ds">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="30"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGB-lU-sqt">
-                                                <rect key="frame" x="91" y="0.0" width="284" height="30"/>
+                                                <rect key="frame" x="91" y="0.0" width="284" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                         </subviews>
                                     </stackView>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email Id" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="gST-ll-9Kn">
-                                        <rect key="frame" x="0.0" y="60" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="115" width="375" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="LLW-B5-Xe8"/>
                                         </constraints>
@@ -184,7 +191,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKW-AQ-xlK">
-                                        <rect key="frame" x="0.0" y="90" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="173" width="375" height="57"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="87" id="Y3R-Np-ZER"/>
                                         </constraints>
@@ -197,7 +204,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-nZ-4iu">
-                                        <rect key="frame" x="0.0" y="120" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="230" width="375" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="eNz-Pq-C2d"/>
                                         </constraints>
@@ -210,7 +217,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DOB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-Zt-ld1">
-                                        <rect key="frame" x="0.0" y="150" width="375" height="30"/>
+                                        <rect key="frame" x="0.0" y="288" width="375" height="57"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="WEo-gS-z1s"/>
                                         </constraints>
@@ -223,29 +230,27 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="164-G4-xth">
-                                        <rect key="frame" x="0.0" y="180" width="375" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="86" id="ssB-V2-JkZ"/>
-                                        </constraints>
+                                        <rect key="frame" x="0.0" y="345" width="375" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
-                                        <variation key="default">
-                                            <mask key="constraints">
-                                                <exclude reference="ssB-V2-JkZ"/>
-                                            </mask>
-                                        </variation>
                                     </textField>
                                 </subviews>
                             </stackView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIt-ac-AoZ">
-                                <rect key="frame" x="160" y="419" width="55" height="30"/>
+                                <rect key="frame" x="160" y="487" width="55" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="K3N-wb-dXk"/>
+                                </constraints>
                                 <state key="normal" title="Sign Up"/>
                                 <connections>
                                     <action selector="signup:" destination="gxJ-bc-fO8" eventType="touchUpInside" id="KbR-lf-QAk"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZx-B9-MSO">
-                                <rect key="frame" x="165" y="505" width="45" height="30"/>
+                                <rect key="frame" x="165" y="542" width="45" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="fCn-X4-sBI"/>
+                                </constraints>
                                 <state key="normal" title="Delete"/>
                                 <connections>
                                     <action selector="deleteUser:" destination="gxJ-bc-fO8" eventType="touchUpInside" id="7Vh-MU-Ls0"/>
@@ -254,22 +259,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="moS-gs-W2x" firstAttribute="top" secondItem="aIt-ac-AoZ" secondAttribute="bottom" constant="218" id="2if-en-kWf"/>
-                            <constraint firstAttribute="trailing" secondItem="E3e-Rv-y7Q" secondAttribute="trailing" id="Ewf-yj-1Av"/>
-                            <constraint firstItem="moS-gs-W2x" firstAttribute="top" secondItem="E3e-Rv-y7Q" secondAttribute="bottom" id="Hsq-Kj-FzR"/>
-                            <constraint firstItem="E3e-Rv-y7Q" firstAttribute="leading" secondItem="gOI-v9-rxn" secondAttribute="leading" id="JjV-SL-qaW"/>
-                            <constraint firstItem="TZx-B9-MSO" firstAttribute="centerX" secondItem="aIt-ac-AoZ" secondAttribute="centerX" id="R3m-JT-yaI"/>
-                            <constraint firstItem="E3e-Rv-y7Q" firstAttribute="top" secondItem="PTc-sO-Xfb" secondAttribute="bottom" id="WNh-So-QQx"/>
-                            <constraint firstItem="aIt-ac-AoZ" firstAttribute="centerX" secondItem="E3e-Rv-y7Q" secondAttribute="centerX" id="j7r-Mn-Vdw"/>
-                            <constraint firstItem="TZx-B9-MSO" firstAttribute="top" secondItem="aIt-ac-AoZ" secondAttribute="bottom" constant="56" id="pHH-Ow-zSS"/>
-                            <constraint firstItem="E3e-Rv-y7Q" firstAttribute="top" secondItem="PTc-sO-Xfb" secondAttribute="bottom" id="skO-pg-V2O"/>
+                            <constraint firstItem="aIt-ac-AoZ" firstAttribute="centerX" secondItem="TZx-B9-MSO" secondAttribute="centerX" id="035-gF-aUz"/>
+                            <constraint firstItem="aIt-ac-AoZ" firstAttribute="top" secondItem="E3e-Rv-y7Q" secondAttribute="bottom" constant="20" id="1Pt-vl-QDQ"/>
+                            <constraint firstItem="TZx-B9-MSO" firstAttribute="top" secondItem="aIt-ac-AoZ" secondAttribute="bottom" constant="25" id="9ZE-JA-ag2"/>
+                            <constraint firstItem="E3e-Rv-y7Q" firstAttribute="top" secondItem="PTc-sO-Xfb" secondAttribute="bottom" id="KWP-co-vox"/>
+                            <constraint firstItem="moS-gs-W2x" firstAttribute="top" secondItem="TZx-B9-MSO" secondAttribute="bottom" constant="95" id="Woy-N6-5d5"/>
+                            <constraint firstItem="E3e-Rv-y7Q" firstAttribute="leading" secondItem="gOI-v9-rxn" secondAttribute="leading" id="aD1-Yy-1Kt"/>
+                            <constraint firstItem="aIt-ac-AoZ" firstAttribute="centerX" secondItem="E3e-Rv-y7Q" secondAttribute="centerX" id="ddO-hd-u5G"/>
+                            <constraint firstAttribute="trailing" secondItem="E3e-Rv-y7Q" secondAttribute="trailing" id="p1g-Mz-3vP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="skO-pg-V2O"/>
-                                <exclude reference="Hsq-Kj-FzR"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="birthDateTextField" destination="VMJ-Zt-ld1" id="yfs-iW-opG"/>

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5708B9871C400CB600360211 /* logInViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5708B9861C400CB600360211 /* logInViewController.m */; };
 		576588F41C3EE820001BDE09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F31C3EE820001BDE09 /* main.m */; };
 		576588F71C3EE820001BDE09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F61C3EE820001BDE09 /* AppDelegate.m */; };
 		576588FA1C3EE820001BDE09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F91C3EE820001BDE09 /* ViewController.m */; };
@@ -39,6 +40,8 @@
 /* Begin PBXFileReference section */
 		0DFE0C2C2AFD85A16DF85171 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 		1DB2E63B8F1E12EDB7DD55E6 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		5708B9851C400CB600360211 /* logInViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = logInViewController.h; sourceTree = "<group>"; };
+		5708B9861C400CB600360211 /* logInViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = logInViewController.m; sourceTree = "<group>"; };
 		576588EF1C3EE820001BDE09 /* GrapeFruit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeFruit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576588F31C3EE820001BDE09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		576588F51C3EE820001BDE09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -95,6 +98,15 @@
 			name = Pods;
 			sourceTree = "<group>";
 		};
+		5708B9841C400C8A00360211 /* LogIn */ = {
+			isa = PBXGroup;
+			children = (
+				5708B9851C400CB600360211 /* logInViewController.h */,
+				5708B9861C400CB600360211 /* logInViewController.m */,
+			);
+			name = LogIn;
+			sourceTree = "<group>";
+		};
 		576588E61C3EE81F001BDE09 = {
 			isa = PBXGroup;
 			children = (
@@ -120,6 +132,7 @@
 		576588F11C3EE820001BDE09 /* GrapeFruit */ = {
 			isa = PBXGroup;
 			children = (
+				5708B9841C400C8A00360211 /* LogIn */,
 				576589281C3F5424001BDE09 /* Signup */,
 				576588F51C3EE820001BDE09 /* AppDelegate.h */,
 				576588F61C3EE820001BDE09 /* AppDelegate.m */,
@@ -362,6 +375,7 @@
 				576588F71C3EE820001BDE09 /* AppDelegate.m in Sources */,
 				576589271C3F4B54001BDE09 /* SignUpViewController.m in Sources */,
 				576588F41C3EE820001BDE09 /* main.m in Sources */,
+				5708B9871C400CB600360211 /* logInViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
