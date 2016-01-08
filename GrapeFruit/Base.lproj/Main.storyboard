@@ -135,10 +135,10 @@
             </objects>
             <point key="canvasLocation" x="1641.5" y="-106.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Sign Up View Controller-->
         <scene sceneID="Nts-H4-BVj">
             <objects>
-                <viewController id="gxJ-bc-fO8" sceneMemberID="viewController">
+                <viewController id="gxJ-bc-fO8" customClass="SignUpViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PTc-sO-Xfb"/>
                         <viewControllerLayoutGuide type="bottom" id="moS-gs-W2x"/>
@@ -240,6 +240,16 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aIt-ac-AoZ">
                                 <rect key="frame" x="160" y="419" width="55" height="30"/>
                                 <state key="normal" title="Sign Up"/>
+                                <connections>
+                                    <action selector="signup:" destination="gxJ-bc-fO8" eventType="touchUpInside" id="KbR-lf-QAk"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TZx-B9-MSO">
+                                <rect key="frame" x="165" y="505" width="45" height="30"/>
+                                <state key="normal" title="Delete"/>
+                                <connections>
+                                    <action selector="deleteUser:" destination="gxJ-bc-fO8" eventType="touchUpInside" id="7Vh-MU-Ls0"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -248,8 +258,10 @@
                             <constraint firstAttribute="trailing" secondItem="E3e-Rv-y7Q" secondAttribute="trailing" id="Ewf-yj-1Av"/>
                             <constraint firstItem="moS-gs-W2x" firstAttribute="top" secondItem="E3e-Rv-y7Q" secondAttribute="bottom" id="Hsq-Kj-FzR"/>
                             <constraint firstItem="E3e-Rv-y7Q" firstAttribute="leading" secondItem="gOI-v9-rxn" secondAttribute="leading" id="JjV-SL-qaW"/>
+                            <constraint firstItem="TZx-B9-MSO" firstAttribute="centerX" secondItem="aIt-ac-AoZ" secondAttribute="centerX" id="R3m-JT-yaI"/>
                             <constraint firstItem="E3e-Rv-y7Q" firstAttribute="top" secondItem="PTc-sO-Xfb" secondAttribute="bottom" id="WNh-So-QQx"/>
                             <constraint firstItem="aIt-ac-AoZ" firstAttribute="centerX" secondItem="E3e-Rv-y7Q" secondAttribute="centerX" id="j7r-Mn-Vdw"/>
+                            <constraint firstItem="TZx-B9-MSO" firstAttribute="top" secondItem="aIt-ac-AoZ" secondAttribute="bottom" constant="56" id="pHH-Ow-zSS"/>
                             <constraint firstItem="E3e-Rv-y7Q" firstAttribute="top" secondItem="PTc-sO-Xfb" secondAttribute="bottom" id="skO-pg-V2O"/>
                         </constraints>
                         <variation key="default">
@@ -259,6 +271,16 @@
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="birthDateTextField" destination="VMJ-Zt-ld1" id="yfs-iW-opG"/>
+                        <outlet property="emailTextField" destination="gST-ll-9Kn" id="xCH-Oc-aMn"/>
+                        <outlet property="firstNameTextField" destination="bD6-nj-0ds" id="lU7-xy-ieO"/>
+                        <outlet property="lastNameTextField" destination="vGB-lU-sqt" id="aw7-6Z-Kb8"/>
+                        <outlet property="passWordConfirmTextField" destination="z3t-nZ-4iu" id="xYn-jO-V67"/>
+                        <outlet property="passWordTextField" destination="sKW-AQ-xlK" id="XZX-11-lQs"/>
+                        <outlet property="phoneNumberTextField" destination="164-G4-xth" id="tsP-UD-9qY"/>
+                        <outlet property="userNameTextField" destination="jt9-Zg-GlH" id="hz0-S3-E2a"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lTa-md-3br" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

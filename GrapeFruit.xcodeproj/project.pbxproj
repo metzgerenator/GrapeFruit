@@ -15,6 +15,7 @@
 		576589021C3EE820001BDE09 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 576589001C3EE820001BDE09 /* LaunchScreen.storyboard */; };
 		5765890D1C3EE820001BDE09 /* GrapeFruitTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 5765890C1C3EE820001BDE09 /* GrapeFruitTests.m */; };
 		576589181C3EE820001BDE09 /* GrapeFruitUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 576589171C3EE820001BDE09 /* GrapeFruitUITests.m */; };
+		576589271C3F4B54001BDE09 /* SignUpViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576589261C3F4B54001BDE09 /* SignUpViewController.m */; };
 		9ECF240CA1D872E309A3838E /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D4C50CA8787D9084FC8AEF76 /* Pods.framework */; };
 /* End PBXBuildFile section */
 
@@ -54,6 +55,8 @@
 		576589131C3EE820001BDE09 /* GrapeFruitUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GrapeFruitUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		576589171C3EE820001BDE09 /* GrapeFruitUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GrapeFruitUITests.m; sourceTree = "<group>"; };
 		576589191C3EE820001BDE09 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		576589251C3F4B54001BDE09 /* SignUpViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignUpViewController.h; sourceTree = "<group>"; };
+		576589261C3F4B54001BDE09 /* SignUpViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignUpViewController.m; sourceTree = "<group>"; };
 		D4C50CA8787D9084FC8AEF76 /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -117,6 +120,7 @@
 		576588F11C3EE820001BDE09 /* GrapeFruit */ = {
 			isa = PBXGroup;
 			children = (
+				576589281C3F5424001BDE09 /* Signup */,
 				576588F51C3EE820001BDE09 /* AppDelegate.h */,
 				576588F61C3EE820001BDE09 /* AppDelegate.m */,
 				576588F81C3EE820001BDE09 /* ViewController.h */,
@@ -154,6 +158,15 @@
 				576589191C3EE820001BDE09 /* Info.plist */,
 			);
 			path = GrapeFruitUITests;
+			sourceTree = "<group>";
+		};
+		576589281C3F5424001BDE09 /* Signup */ = {
+			isa = PBXGroup;
+			children = (
+				576589251C3F4B54001BDE09 /* SignUpViewController.h */,
+				576589261C3F4B54001BDE09 /* SignUpViewController.m */,
+			);
+			name = Signup;
 			sourceTree = "<group>";
 		};
 		E97C2E505DEF288D3A4B78AE /* Frameworks */ = {
@@ -347,6 +360,7 @@
 			files = (
 				576588FA1C3EE820001BDE09 /* ViewController.m in Sources */,
 				576588F71C3EE820001BDE09 /* AppDelegate.m in Sources */,
+				576589271C3F4B54001BDE09 /* SignUpViewController.m in Sources */,
 				576588F41C3EE820001BDE09 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
