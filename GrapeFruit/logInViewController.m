@@ -17,7 +17,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view.
+    
+
+    
+    
 }
 
 - (void)didReceiveMemoryWarning {
@@ -43,23 +46,18 @@
     
     
     if ([email length] ==0 || [passWord length] == 0) {
-        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh NO!" message:@"Make sure you enter a username and password!" preferredStyle:UIAlertControllerStyleAlert];
-        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                              handler:^(UIAlertAction * action) {}];
+       
         
-        [alertView addAction:defaultAction];
-        [self presentViewController:alertView animated:YES completion:nil];
+        [self alertMessage:@"Oh NO!" message:@"Make sure you enter a username and password!"];
+        
     } else {
         
         [PFUser logInWithUsernameInBackground:email password:passWord block:^(PFUser * _Nullable user, NSError * _Nullable error) {
             
             if (error) {
-                UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Oh Boy!" message:[error.userInfo objectForKey:@"error"] preferredStyle:UIAlertControllerStyleAlert];
-                UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
-                                                                      handler:^(UIAlertAction * action) {}];
+               
                 
-                [alertView addAction:defaultAction];
-                [self presentViewController:alertView animated:YES completion:nil];
+                [self alertMessage:@"Oh Boy!" message:[error.userInfo objectForKey:@"error"]];
                 
             } else {
                 
