@@ -123,7 +123,45 @@
                 
                 [newObject saveInBackground];
                 
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+                // send phone varification code
+                
+                //check for phone number format
+                
+                
+                if ([phoneNumber length] != 10) {
+                    
+                    self.phoneNumberTextField.text = @" ";
+                    
+                    [self alertMessage:@"Phone Error" message:@"Make sure you enter a 10 digit number!"];
+                }
+                
+                //add country code
+                NSString *phoneNumberToVerify = [NSString stringWithFormat:@"+1%@", phoneNumber];
+    
+                NSDictionary *params = [NSDictionary dictionaryWithObject:phoneNumberToVerify forKey:@"phoneNumber"];
+                //call parse cloud for function 
+                [PFCloud callFunctionInBackground:@"sendVerification" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
+                    NSString *message = @"";
+                    if (!error) {
+                        message = @"We just sent you a 4 digit code on your mobile number.  Enter the code to verify your mobile number";
+                        
+                        
+                        [self alertMessage:@"Verification Sent" message:message];
+                        //segue to verification view controller
+                        [self performSegueWithIdentifier:@"varify" sender:nil];
+                  
+                    } else {
+                        message = @"Uh oh, something went wrong :(.  Please double check your phone number.";
+                         [self alertMessage:@"Error !" message:message];
+                    }
+                    
+                    
+                  
+                }];
+                
+                
+            
                 
             
             }

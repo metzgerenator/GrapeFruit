@@ -62,8 +62,10 @@
                 
             } else {
                 
-                //                [self dismissViewControllerAnimated:YES completion:nil];
-                [self.navigationController popToRootViewControllerAnimated:YES];
+                
+                [self.navigationController popToRootViewControllerAnimated:YES];  
+                
+                
                 
             }
             
@@ -73,6 +75,13 @@
     }
     
 
+}
+
+#pragma mark - delete account
+
+- (IBAction)deleteAccount:(id)sender {
+    
+    [[PFUser currentUser] deleteInBackground];  
 }
 
 

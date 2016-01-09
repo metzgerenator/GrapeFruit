@@ -21,6 +21,7 @@
 - (IBAction)loginButton:(id)sender;
 
 
+- (IBAction)deleteAccount:(id)sender;
 
 
 @end
