@@ -172,15 +172,15 @@
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F8m-H3-jIy">
-                                        <rect key="frame" x="0.0" y="58" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="58" width="375" height="58"/>
                                         <subviews>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" horizontalHuggingPriority="251" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="First Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bD6-nj-0ds">
-                                                <rect key="frame" x="0.0" y="0.0" width="91" height="57"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="91" height="58"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
                                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Last Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vGB-lU-sqt">
-                                                <rect key="frame" x="91" y="0.0" width="284" height="57"/>
+                                                <rect key="frame" x="91" y="0.0" width="284" height="58"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                                 <textInputTraits key="textInputTraits"/>
                                             </textField>
@@ -200,7 +200,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="sKW-AQ-xlK">
-                                        <rect key="frame" x="0.0" y="173" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="173" width="375" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="87" id="Y3R-Np-ZER"/>
                                         </constraints>
@@ -213,7 +213,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Retype Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="z3t-nZ-4iu">
-                                        <rect key="frame" x="0.0" y="230" width="375" height="58"/>
+                                        <rect key="frame" x="0.0" y="231" width="375" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="eNz-Pq-C2d"/>
                                         </constraints>
@@ -226,7 +226,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="DOB" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMJ-Zt-ld1">
-                                        <rect key="frame" x="0.0" y="288" width="375" height="57"/>
+                                        <rect key="frame" x="0.0" y="288" width="375" height="58"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="86" id="WEo-gS-z1s"/>
                                         </constraints>
@@ -239,7 +239,7 @@
                                         </variation>
                                     </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Phone " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="164-G4-xth">
-                                        <rect key="frame" x="0.0" y="345" width="375" height="58"/>
+                                        <rect key="frame" x="0.0" y="346" width="375" height="58"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                     </textField>
@@ -294,10 +294,10 @@
             </objects>
             <point key="canvasLocation" x="1752.5" y="605.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Verify View Controller-->
         <scene sceneID="zZu-Kn-Qg3">
             <objects>
-                <viewController id="uZM-mq-lha" sceneMemberID="viewController">
+                <viewController id="uZM-mq-lha" customClass="VerifyViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="KYV-wr-pW0"/>
                         <viewControllerLayoutGuide type="bottom" id="lyb-La-tca"/>
@@ -315,11 +315,14 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="4 digit code " textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Cvt-uG-OLe">
                                 <rect key="frame" x="103" y="218" width="168" height="30"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eKA-S0-YPC">
                                 <rect key="frame" x="167" y="319" width="40" height="30"/>
                                 <state key="normal" title="Verify"/>
+                                <connections>
+                                    <action selector="verifyButton:" destination="uZM-mq-lha" eventType="touchUpInside" id="BAf-iz-mE3"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -335,6 +338,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="Ujv-Ky-cCd"/>
                     <connections>
+                        <outlet property="verificationTextField" destination="Cvt-uG-OLe" id="Sph-fN-YpA"/>
                         <segue destination="h1J-sB-2dA" kind="presentation" identifier="success" id="9eX-a4-ykU"/>
                     </connections>
                 </viewController>
@@ -342,10 +346,10 @@
             </objects>
             <point key="canvasLocation" x="2287.5" y="610.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Success View Controller-->
         <scene sceneID="7mw-7K-jTc">
             <objects>
-                <viewController id="h1J-sB-2dA" sceneMemberID="viewController">
+                <viewController id="h1J-sB-2dA" customClass="SuccessViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="455-ib-ZK2"/>
                         <viewControllerLayoutGuide type="bottom" id="q52-Px-4VI"/>
@@ -366,6 +370,9 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h03-TW-y3n">
                                 <rect key="frame" x="130" y="278" width="105" height="30"/>
                                 <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteAccount:" destination="h1J-sB-2dA" eventType="touchUpInside" id="lSV-4S-Mnz"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

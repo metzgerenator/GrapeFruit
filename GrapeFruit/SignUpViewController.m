@@ -144,12 +144,28 @@
                 [PFCloud callFunctionInBackground:@"sendVerification" withParameters:params block:^(id  _Nullable object, NSError * _Nullable error) {
                     NSString *message = @"";
                     if (!error) {
-                        message = @"We just sent you a 4 digit code on your mobile number.  Enter the code to verify your mobile number";
+                        message = @"We just sent you a 6 digit code on your mobile number.  Enter the code to verify your mobile number";
                         
                         
-                        [self alertMessage:@"Verification Sent" message:message];
+//                        [self alertMessage:@"Verification Sent" message:message];
                         //segue to verification view controller
-                        [self performSegueWithIdentifier:@"varify" sender:nil];
+                        
+                        
+                        
+                        UIAlertController *alertView = [UIAlertController alertControllerWithTitle:@"Verification Sent" message:message preferredStyle:UIAlertControllerStyleAlert];
+                        UIAlertAction* defaultAction = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault
+                                                                              handler:^(UIAlertAction * action) {
+                                                                              
+                                                                               [self performSegueWithIdentifier:@"varify" sender:self];
+                                                                              
+                                                                              
+                                                                              }];
+                        
+                        [alertView addAction:defaultAction];
+                        [self presentViewController:alertView animated:YES completion:nil];
+                        
+                        
+                       
                   
                     } else {
                         message = @"Uh oh, something went wrong :(.  Please double check your phone number.";
