@@ -17,14 +17,9 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    [PFCloud callFunctionInBackground:@"hello"
-                       withParameters:@{ }
-                                block:^(id object, NSError *error) {
-                                    NSLog(@"object  is %@", object);
-                                    
-                                    NSLog(@"error  is %@", error);
-                                    
-                                }];
+    
+    
+
     
     
 }
