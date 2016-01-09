@@ -1,20 +1,18 @@
 //
-//  SuccessViewController.m
+//  LoginOptionViewController.m
 //  GrapeFruit
 //
-//  Created by Michael Metzger  on 1/9/16.
+//  Created by Aileen Taboy on 1/9/16.
 //  Copyright © 2016 Mike. All rights reserved.
 //
 
-#import "SuccessViewController.h"
-#import <Parse/Parse.h>
+#import "LoginOptionViewController.h"
 
-
-@interface SuccessViewController ()
+@interface LoginOptionViewController ()
 
 @end
 
-@implementation SuccessViewController
+@implementation LoginOptionViewController
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -36,11 +34,4 @@
 }
 */
 
-- (IBAction)deleteAccount:(id)sender {
-    
-    [[PFUser currentUser] deleteInBackground];  
-    
-    
-    
-}
 @end

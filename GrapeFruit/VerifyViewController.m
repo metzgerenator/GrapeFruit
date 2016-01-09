@@ -50,7 +50,7 @@
     
            
             //segue to success view controller
-            [self performSegueWithIdentifier:@"success" sender:nil];
+            [self.navigationController popToRootViewControllerAnimated:YES];  
             
         } else {
             message = @"Uh oh, something went wrong :(.  Please double check your verification text.";
