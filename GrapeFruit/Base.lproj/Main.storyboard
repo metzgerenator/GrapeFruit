@@ -437,6 +437,9 @@
                     </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="aboutMe" destination="uX3-Ot-AnY" id="gAx-a8-BKq"/>
+                        <outlet property="fullName" destination="N0b-Vk-E4N" id="F96-Oq-ztl"/>
+                        <outlet property="userName" destination="cDT-xT-c2A" id="uB7-tM-dTT"/>
                         <segue destination="BfS-QW-gkE" kind="presentation" identifier="signUp" id="VH0-aB-qwG"/>
                     </connections>
                 </viewController>
@@ -547,6 +550,9 @@
                             <barButtonItem title="Photo" id="5CE-MN-8sH">
                                 <connections>
                                     <action selector="editPhotoButton:" destination="t37-SB-3ZV" id="rAW-6y-hev"/>
+                                    <segue destination="Jby-7h-5AF" kind="popoverPresentation" popoverAnchorBarButtonItem="5CE-MN-8sH" id="SGN-Sk-LA5">
+                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                    </segue>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -563,6 +569,24 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byk-Ph-FVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828.5" y="1396.5"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="VJh-pP-mmO">
+            <objects>
+                <viewController id="Jby-7h-5AF" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="oMv-3z-Q9c"/>
+                        <viewControllerLayoutGuide type="bottom" id="Aqv-bg-gad"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="KwA-dA-xwd">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="lfV-kF-a8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2364" y="1398"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wi6-KP-Lj2">

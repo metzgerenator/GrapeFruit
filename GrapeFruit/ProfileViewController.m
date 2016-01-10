@@ -11,6 +11,11 @@
 
 @interface ProfileViewController ()
 
+
+
+
+@property (nonatomic, strong) PFObject *userData;
+
 @end
 
 @implementation ProfileViewController
@@ -32,7 +37,7 @@
     PFUser *currentUser = [PFUser currentUser];
     
     if (currentUser) {
-        
+        [self loadUserData];
         NSLog(@"The Current User is %@",currentUser.username);
         
     }else {
@@ -45,6 +50,35 @@
         
         
     }
+    
+    
+}
+
+
+#pragma mark - load user data
+
+-(void)loadUserData {
+    
+    
+    //Create PFObject for current user
+    self.userData = [PFUser currentUser];
+    
+    
+    
+    //organize data into strings
+    NSString *firstNameString = [self.userData objectForKey:@"FirstName"];
+    NSString *lastNameString = [self.userData objectForKey:@"LastName"];
+    self.userName.text = [self.userData objectForKey:@"username"];
+    self.aboutMe.text = [self.userData objectForKey:@"AboutMe"];
+    
+    //set the labels
+    self.fullName.text = [NSString stringWithFormat:@"%@ %@", firstNameString, lastNameString];
+
+
+    
+    
+    //set about me label
+    
     
     
     
@@ -65,10 +99,6 @@
 }
 */
 
-#pragma mark - unwind segue
-- (IBAction)unwindToMainMenu:(UIStoryboardSegue*)sender
-{
-}
 
 - (IBAction)deleteButton:(id)sender {
     

@@ -19,4 +19,13 @@
 
 
 
+@property (weak, nonatomic) IBOutlet UILabel *fullName;
+
+
+@property (weak, nonatomic) IBOutlet UILabel *userName;
+
+
+@property (weak, nonatomic) IBOutlet UITextView *aboutMe;
+
+
 @end
