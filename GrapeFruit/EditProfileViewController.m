@@ -18,6 +18,10 @@
 @property (nonatomic, weak)NSString *LastName;
 @property (nonatomic, weak)NSString *userName;
 @property (nonatomic, weak)NSString *birthDate;
+@property (nonatomic, weak)NSString *aboutMe;
+
+@property (nonatomic, strong) PFObject *userData;
+
 
 @end
 
@@ -26,9 +30,9 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    PFObject *userData = [PFUser currentUser];
+    [self loadUserData];
+
     
-    NSLog(@"user data is %@", userData); 
     
     
 }
@@ -42,6 +46,37 @@
     
 }
 
+
+#pragma mark - load user data 
+
+-(void)loadUserData {
+    
+    
+    //Create PFObject for current user
+    self.userData = [PFUser currentUser];
+    
+    //organize data into strings
+    self.firstName = [self.userData objectForKey:@"FirstName"];
+    self.LastName = [self.userData objectForKey:@"LastName"];
+    self.userName = [self.userData objectForKey:@"username"];
+    self.birthDate = [self.userData objectForKey:@"Birthday"];
+    self.aboutMe = [self.userData objectForKey:@"AboutMe"];
+    
+    //set the labels
+    self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.firstName, self.LastName];
+    self.firstNameLabel.text = self.firstName;
+    self.lastNameLabel.text = self.LastName;
+    self.DobLabel.text = self.birthDate;
+    self.userNameLabel.text = self.userName;
+    
+    
+    //set about me label
+    
+    self.aboutMeLabel.text = self.aboutMe;
+    
+    
+    
+}
 
 
 - (void)didReceiveMemoryWarning {
@@ -63,5 +98,27 @@
 }
 
 - (IBAction)saveButton:(id)sender {
+    
+    
+    
+    
+    //Set object for key
+    
+    [self.userData setObject:self.firstNameLabel.text forKey:@"FirstName"];
+    
+    [self.userData setObject:self.lastNameLabel.text forKey:@"LastName"];
+    
+    [self.userData setObject:self.DobLabel.text forKey:@"Birthday"];
+    [self.userData setObject:self.userNameLabel.text forKey:@"username"];
+    
+    [self.userData setObject:self.aboutMeLabel.text forKey:@"AboutMe"];
+    
+    [self.userData saveInBackground];
+    
+    
+    [self.navigationController popViewControllerAnimated:YES];  
+    
+    
+    
 }
 @end
