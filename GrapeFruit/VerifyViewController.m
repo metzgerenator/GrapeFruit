@@ -8,6 +8,7 @@
 
 #import "VerifyViewController.h"
 #import <Parse/Parse.h>
+#import "ProfileViewController.h"
 
 
 @interface VerifyViewController ()
@@ -48,9 +49,13 @@
         NSString *message = @"";
         if (!error) {
     
-           
-            //segue to success view controller
-            [self.navigationController popToRootViewControllerAnimated:YES];  
+            UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                 bundle:nil];
+            ProfileViewController *add = [storyboard instantiateInitialViewController];
+            
+            [self presentViewController:add
+                               animated:YES
+                             completion:nil];
             
         } else {
             message = @"Uh oh, something went wrong :(.  Please double check your verification text.";

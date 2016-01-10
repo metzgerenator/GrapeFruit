@@ -8,6 +8,7 @@
 
 #import "logInViewController.h"
 #import <Parse/Parse.h>
+#import "ProfileViewController.h"
 
 @interface logInViewController ()
 
@@ -53,6 +54,7 @@
         
     } else {
         
+        
         [PFUser logInWithUsernameInBackground:email password:passWord block:^(PFUser * _Nullable user, NSError * _Nullable error) {
             
             if (error) {
@@ -63,7 +65,17 @@
             } else {
                 
                 
-                [self.navigationController popToRootViewControllerAnimated:YES];  
+                
+                // instantiate view controller
+                UIStoryboard* storyboard = [UIStoryboard storyboardWithName:@"Main"
+                                                                     bundle:nil];
+               
+                
+                ProfileViewController *add = [storyboard instantiateInitialViewController];
+                
+                [self presentViewController:add
+                                   animated:YES 
+                                 completion:nil];
                 
                 
                 
