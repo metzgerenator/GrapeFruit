@@ -7,10 +7,12 @@
 //
 
 #import "EditProfileViewController.h"
+#import "ProfilePhotoViewController.h"
 #import <Parse/Parse.h>
 
 
-@interface EditProfileViewController ()
+@interface EditProfileViewController ()<UIPopoverPresentationControllerDelegate>
+
 
 
 @property (nonatomic, weak)NSString *fullName;
@@ -21,6 +23,8 @@
 @property (nonatomic, weak)NSString *aboutMe;
 
 @property (nonatomic, strong) PFObject *userData;
+
+@property(nonatomic,strong)ProfilePhotoViewController *popOVer;
 
 
 @end
@@ -44,6 +48,36 @@
     
     
     
+}
+
+
+#pragma Mark - present photo popover
+
+- (IBAction)photoButton:(id)sender {
+    
+
+    [self performSegueWithIdentifier:@"popOver" sender:self];
+    
+}
+
+
+-(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    
+    if ([segue.identifier isEqualToString:@"popOver"]) {
+        ProfilePhotoViewController *vc = segue.destinationViewController;
+        vc.popoverPresentationController.sourceView = sender;
+        
+        vc.popoverPresentationController.delegate = self;
+        
+        
+    }
+    
+}
+
+
+-(UIModalPresentationStyle)adaptivePresentationStyleForPresentationController:(UIPresentationController *)controller {
+    
+    return UIModalPresentationNone;
 }
 
 
@@ -94,8 +128,6 @@
 }
 */
 
-- (IBAction)editPhotoButton:(id)sender {
-}
 
 - (IBAction)saveButton:(id)sender {
     

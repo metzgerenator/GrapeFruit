@@ -12,6 +12,7 @@
 		5709D6D71C41A50E00952909 /* ProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5709D6D61C41A50E00952909 /* ProfileViewController.m */; };
 		5709D6DA1C41AECD00952909 /* LoginOptionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5709D6D91C41AECD00952909 /* LoginOptionViewController.m */; };
 		5709D6DD1C42B72D00952909 /* EditProfileViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5709D6DC1C42B72D00952909 /* EditProfileViewController.m */; };
+		5709D6E01C43088600952909 /* ProfilePhotoViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 5709D6DF1C43088600952909 /* ProfilePhotoViewController.m */; };
 		576588F41C3EE820001BDE09 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F31C3EE820001BDE09 /* main.m */; };
 		576588F71C3EE820001BDE09 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F61C3EE820001BDE09 /* AppDelegate.m */; };
 		576588FA1C3EE820001BDE09 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 576588F91C3EE820001BDE09 /* ViewController.m */; };
@@ -54,6 +55,8 @@
 		5709D6D91C41AECD00952909 /* LoginOptionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginOptionViewController.m; sourceTree = "<group>"; };
 		5709D6DB1C42B72D00952909 /* EditProfileViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EditProfileViewController.h; sourceTree = "<group>"; };
 		5709D6DC1C42B72D00952909 /* EditProfileViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = EditProfileViewController.m; sourceTree = "<group>"; };
+		5709D6DE1C43088600952909 /* ProfilePhotoViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProfilePhotoViewController.h; sourceTree = "<group>"; };
+		5709D6DF1C43088600952909 /* ProfilePhotoViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProfilePhotoViewController.m; sourceTree = "<group>"; };
 		576588EF1C3EE820001BDE09 /* GrapeFruit.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GrapeFruit.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		576588F31C3EE820001BDE09 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		576588F51C3EE820001BDE09 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -135,6 +138,8 @@
 				5709D6D61C41A50E00952909 /* ProfileViewController.m */,
 				5709D6DB1C42B72D00952909 /* EditProfileViewController.h */,
 				5709D6DC1C42B72D00952909 /* EditProfileViewController.m */,
+				5709D6DE1C43088600952909 /* ProfilePhotoViewController.h */,
+				5709D6DF1C43088600952909 /* ProfilePhotoViewController.m */,
 			);
 			name = Profile;
 			sourceTree = "<group>";
@@ -416,6 +421,7 @@
 				576588F41C3EE820001BDE09 /* main.m in Sources */,
 				5708B9871C400CB600360211 /* logInViewController.m in Sources */,
 				5709D6DA1C41AECD00952909 /* LoginOptionViewController.m in Sources */,
+				5709D6E01C43088600952909 /* ProfilePhotoViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -388,7 +388,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uX3-Ot-AnY">
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="uX3-Ot-AnY">
                                 <rect key="frame" x="20" y="391" width="335" height="268"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
@@ -549,10 +549,7 @@
                             </barButtonItem>
                             <barButtonItem title="Photo" id="5CE-MN-8sH">
                                 <connections>
-                                    <action selector="editPhotoButton:" destination="t37-SB-3ZV" id="rAW-6y-hev"/>
-                                    <segue destination="Jby-7h-5AF" kind="popoverPresentation" popoverAnchorBarButtonItem="5CE-MN-8sH" id="SGN-Sk-LA5">
-                                        <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
-                                    </segue>
+                                    <action selector="photoButton:" destination="t37-SB-3ZV" id="K25-pQ-iu7"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
@@ -564,16 +561,19 @@
                         <outlet property="fullNameLabel" destination="gEK-YV-T3S" id="RG1-JI-wig"/>
                         <outlet property="lastNameLabel" destination="BVg-qC-3cj" id="Z4E-5a-Jhi"/>
                         <outlet property="userNameLabel" destination="b8q-ux-RFt" id="AkR-MA-4UL"/>
+                        <segue destination="Jby-7h-5AF" kind="popoverPresentation" identifier="popOver" popoverAnchorBarButtonItem="5CE-MN-8sH" id="NHB-sd-0jY">
+                            <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                        </segue>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Byk-Ph-FVM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1828.5" y="1396.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Profile Photo View Controller-->
         <scene sceneID="VJh-pP-mmO">
             <objects>
-                <viewController id="Jby-7h-5AF" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="photoPop" id="Jby-7h-5AF" customClass="ProfilePhotoViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="oMv-3z-Q9c"/>
                         <viewControllerLayoutGuide type="bottom" id="Aqv-bg-gad"/>
@@ -581,12 +581,25 @@
                     <view key="view" contentMode="scaleToFill" id="KwA-dA-xwd">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-QD-Yxs">
+                                <rect key="frame" x="119" y="101" width="136" height="30"/>
+                                <state key="normal" title="Choose from library"/>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-bT-gMK">
+                                <rect key="frame" x="149" y="147" width="77" height="30"/>
+                                <state key="normal" title="Take Photo"/>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
+                    <nil key="simulatedStatusBarMetrics"/>
+                    <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+                    <size key="freeformSize" width="375" height="300"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfV-kF-a8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2364" y="1398"/>
+            <point key="canvasLocation" x="2344.5" y="1421.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="wi6-KP-Lj2">
