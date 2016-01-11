@@ -23,6 +23,34 @@
     // Do any additional setup after loading the view.
 }
 
+
+-(void)viewDidAppear:(BOOL)animated {
+    
+    //format DOB textField in realtime
+    [self.birthDateTextField addTarget:self
+                  action:@selector(textFieldDidChange:)
+        forControlEvents:UIControlEventEditingChanged];
+    
+}
+
+//method for DOB text formatting
+-(void)textFieldDidChange:(UITextField *)theTextField
+{
+    NSLog(@"text changed: %@", theTextField.text);
+    
+    NSString *textFieldText = [theTextField.text stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    
+    
+    
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+//    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
+    [formatter setNumberStyle:NSDateFormatterShortStyle];
+    
+    NSString *formattedOutput = [formatter stringFromNumber:[NSNumber numberWithInt:[textFieldText integerValue]]];
+    self.birthDateTextField.text=formattedOutput;
+}
+
+
 - (void)didReceiveMemoryWarning {
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
@@ -83,6 +111,8 @@
     NSString *LastName =[self.lastNameTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
     NSString *birthDate = [self.birthDateTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
+    
+    
     
     NSString *phoneNumber = [self.phoneNumberTextField.text stringByTrimmingCharactersInSet:[NSCharacterSet whitespaceAndNewlineCharacterSet]];
     
