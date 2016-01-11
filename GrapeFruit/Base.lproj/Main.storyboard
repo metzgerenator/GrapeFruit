@@ -587,18 +587,18 @@
                         <viewControllerLayoutGuide type="bottom" id="Aqv-bg-gad"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KwA-dA-xwd">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="300"/>
+                        <rect key="frame" x="0.0" y="0.0" width="200" height="121"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vuK-QD-Yxs">
-                                <rect key="frame" x="119" y="101" width="136" height="30"/>
+                                <rect key="frame" x="32" y="23" width="136" height="30"/>
                                 <state key="normal" title="Choose from library"/>
                                 <connections>
                                     <action selector="chooseFromLibrary:" destination="Jby-7h-5AF" eventType="touchUpInside" id="RlQ-c5-bZg"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xGh-bT-gMK">
-                                <rect key="frame" x="149" y="147" width="77" height="30"/>
+                                <rect key="frame" x="62" y="69" width="77" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="Jby-7h-5AF" eventType="touchUpInside" id="GbQ-77-JUE"/>
@@ -607,15 +607,15 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="vuK-QD-Yxs" firstAttribute="centerX" secondItem="KwA-dA-xwd" secondAttribute="centerX" id="BZ6-w4-Nfa"/>
-                            <constraint firstItem="xGh-bT-gMK" firstAttribute="centerX" secondItem="vuK-QD-Yxs" secondAttribute="centerX" id="S6d-yd-K0g"/>
-                            <constraint firstItem="xGh-bT-gMK" firstAttribute="top" secondItem="vuK-QD-Yxs" secondAttribute="bottom" constant="16" id="ZTq-WP-QcC"/>
-                            <constraint firstItem="vuK-QD-Yxs" firstAttribute="top" secondItem="oMv-3z-Q9c" secondAttribute="bottom" constant="101" id="c5k-wH-qPb"/>
+                            <constraint firstItem="Aqv-bg-gad" firstAttribute="top" secondItem="xGh-bT-gMK" secondAttribute="bottom" constant="22" id="H3g-hv-Bl5"/>
+                            <constraint firstItem="xGh-bT-gMK" firstAttribute="top" secondItem="vuK-QD-Yxs" secondAttribute="bottom" constant="16" id="Hxe-64-ONk"/>
+                            <constraint firstItem="xGh-bT-gMK" firstAttribute="centerX" secondItem="vuK-QD-Yxs" secondAttribute="centerX" id="fPj-1l-GPR"/>
+                            <constraint firstItem="xGh-bT-gMK" firstAttribute="centerX" secondItem="KwA-dA-xwd" secondAttribute="centerX" id="ghZ-RW-Bcq"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
-                    <size key="freeformSize" width="375" height="300"/>
+                    <size key="freeformSize" width="200" height="121"/>
                     <connections>
                         <segue destination="uAS-wi-NWe" kind="unwind" identifier="photo" unwindAction="unwindFromModalViewController:" id="Npe-Qb-hJh"/>
                     </connections>

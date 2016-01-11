@@ -73,6 +73,10 @@
         ProfilePhotoViewController *vc = segue.destinationViewController;
         vc.popoverPresentationController.sourceView = sender;
         
+        //set the size
+        
+        vc.preferredContentSize = CGSizeMake(200, 121);
+        
         vc.popoverPresentationController.delegate = self;
         
         
