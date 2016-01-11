@@ -77,7 +77,15 @@
 
     
     
-    //set about me label
+    //set profile image
+    
+    PFFile *imageFile = [self.userData objectForKey:@"ProfilePhoto"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+            self.profileImage.image = [UIImage imageWithData:data];
+        }
+    }];
     
     
     

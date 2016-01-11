@@ -439,6 +439,7 @@
                     <connections>
                         <outlet property="aboutMe" destination="uX3-Ot-AnY" id="gAx-a8-BKq"/>
                         <outlet property="fullName" destination="N0b-Vk-E4N" id="F96-Oq-ztl"/>
+                        <outlet property="profileImage" destination="D20-xF-eqQ" id="JME-Sd-u64"/>
                         <outlet property="userName" destination="cDT-xT-c2A" id="uB7-tM-dTT"/>
                         <segue destination="BfS-QW-gkE" kind="presentation" identifier="signUp" id="VH0-aB-qwG"/>
                     </connections>
@@ -459,11 +460,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-De-eYe">
-                                <rect key="frame" x="0.0" y="64" width="370" height="198"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="2014-12-03 11.25.25" translatesAutoresizingMaskIntoConstraints="NO" id="OO7-De-eYe">
+                                <rect key="frame" x="0.0" y="64" width="374" height="198"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Richard P" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gEK-YV-T3S">
                                 <rect key="frame" x="150" y="263" width="74" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="jno-4V-4c9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -492,7 +496,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="ZbP-57-Vka">
-                                <rect key="frame" x="27" y="470" width="316" height="124"/>
+                                <rect key="frame" x="27" y="470" width="320" height="124"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -506,6 +510,9 @@
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="29 years" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1p4-mT-4Ex">
                                 <rect key="frame" x="150" y="290" width="66" height="21"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="bmO-eo-Pl9"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
@@ -517,7 +524,7 @@
                             <constraint firstItem="BVg-qC-3cj" firstAttribute="leading" secondItem="T4q-p1-rA8" secondAttribute="trailing" constant="13" id="6If-GQ-Fwo"/>
                             <constraint firstItem="gEK-YV-T3S" firstAttribute="top" secondItem="OO7-De-eYe" secondAttribute="bottom" constant="1" id="6wo-t6-2s1"/>
                             <constraint firstItem="b8q-ux-RFt" firstAttribute="centerX" secondItem="3jN-oN-M8v" secondAttribute="centerX" id="CaH-ns-oed"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="OO7-De-eYe" secondAttribute="trailing" constant="-11" id="Caa-Y8-TpO"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="OO7-De-eYe" secondAttribute="trailing" constant="-15" id="Caa-Y8-TpO"/>
                             <constraint firstItem="gEK-YV-T3S" firstAttribute="centerX" secondItem="b8q-ux-RFt" secondAttribute="centerX" id="F7A-Ls-WVx"/>
                             <constraint firstItem="1p4-mT-4Ex" firstAttribute="top" secondItem="gEK-YV-T3S" secondAttribute="bottom" constant="6" id="FPG-QW-Qtb"/>
                             <constraint firstItem="OO7-De-eYe" firstAttribute="top" secondItem="sUb-cs-Zaz" secondAttribute="bottom" id="I3u-wT-fC0"/>
@@ -609,8 +616,12 @@
                     <nil key="simulatedStatusBarMetrics"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="300"/>
+                    <connections>
+                        <segue destination="uAS-wi-NWe" kind="unwind" identifier="photo" unwindAction="unwindFromModalViewController:" id="Npe-Qb-hJh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="lfV-kF-a8S" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="uAS-wi-NWe" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="2344.5" y="1421.5"/>
         </scene>

@@ -17,6 +17,7 @@
 
 - (IBAction)logOutButton:(id)sender;
 
+@property (weak, nonatomic) IBOutlet UIImageView *profileImage;
 
 
 @property (weak, nonatomic) IBOutlet UILabel *fullName;

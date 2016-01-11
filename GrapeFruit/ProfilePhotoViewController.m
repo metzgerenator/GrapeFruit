@@ -38,18 +38,7 @@
     
 }
 
--(void)viewDidDisappear:(BOOL)animated {
-    
-    EditProfileViewController *viewController = [[EditProfileViewController alloc]init];
-    
-    viewController.profilePhoto.image = self.pictureForProfile;
-    
-    
-    [viewController viewDidAppear:YES];
 
-    
-    
-}
 
 
 - (void)didReceiveMemoryWarning {
@@ -119,6 +108,8 @@
     
     
     [picker dismissViewControllerAnimated:YES completion:nil];
+    
+    [self performSegueWithIdentifier:@"photo" sender:self];
     
     
 }

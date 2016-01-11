@@ -11,7 +11,13 @@
 #import <Parse/Parse.h>
 
 
-@interface EditProfileViewController ()<UIPopoverPresentationControllerDelegate>
+@interface EditProfileViewController ()<UIPopoverPresentationControllerDelegate>{
+    //String for preventing upload of default about me text
+    
+    NSString *profileHolder;
+    
+    
+}
 
 
 
@@ -46,7 +52,6 @@
 -(void)viewDidAppear:(BOOL)animated {
     
     
-    NSLog(@"loading");
     
     
 }
@@ -97,12 +102,35 @@
     self.birthDate = [self.userData objectForKey:@"Birthday"];
     self.aboutMe = [self.userData objectForKey:@"AboutMe"];
     
+    //place holder text for aboutMe being null
+    
+    if (self.aboutMe.length == 0) {
+        
+        profileHolder = @"Tap here to write  summery about yourself";
+        self.aboutMe = profileHolder;
+    }
+    
+    
     //set the labels
     self.fullNameLabel.text = [NSString stringWithFormat:@"%@ %@", self.firstName, self.LastName];
     self.firstNameLabel.text = self.firstName;
     self.lastNameLabel.text = self.LastName;
     self.DobLabel.text = self.birthDate;
     self.userNameLabel.text = self.userName;
+    
+    
+    //set the profile photo
+    
+    
+    PFFile *imageFile = [self.userData objectForKey:@"ProfilePhoto"];
+    
+    [imageFile getDataInBackgroundWithBlock:^(NSData * _Nullable data, NSError * _Nullable error) {
+        if (!error) {
+             self.profilePhoto.image = [UIImage imageWithData:data];
+        }
+    }];
+    
+   
     
     
     //set about me label
@@ -144,7 +172,29 @@
     [self.userData setObject:self.DobLabel.text forKey:@"Birthday"];
     [self.userData setObject:self.userNameLabel.text forKey:@"username"];
     
-    [self.userData setObject:self.aboutMeLabel.text forKey:@"AboutMe"];
+    
+    //prevent place holder text from being saved
+    
+    if (profileHolder.length > 0) {
+        // do nothing
+        
+        [self.userData setObject:@" " forKey:@"AboutMe"];
+    }else {
+        [self.userData setObject:self.aboutMeLabel.text forKey:@"AboutMe"];
+    }
+    
+   
+    
+    
+    //set profile photo for upload
+    
+    //Pack item Image
+    NSData *imageData = UIImageJPEGRepresentation(self.profilePhoto.image, 0.8);
+    NSString *filename = [NSString stringWithFormat:@"%@.png", self.userNameLabel.text];
+    PFFile *imageFile = [PFFile fileWithName:filename data:imageData];
+    [self.userData setObject:imageFile forKey:@"ProfilePhoto"];
+    
+    
     
     [self.userData saveInBackground];
     
@@ -152,6 +202,25 @@
     [self.navigationController popViewControllerAnimated:YES];  
     
     
+    
+}
+
+
+#pragma mark - retrive photo from Popover Segue 
+
+
+- (IBAction)unwindFromModalViewController:(UIStoryboardSegue *)segue{
+    
+    if ([segue.sourceViewController isKindOfClass:[ProfilePhotoViewController class]]) {
+        ProfilePhotoViewController *createAptView = segue.sourceViewController;
+        if (self.profilePhoto) {
+            
+            self.profilePhoto.image = createAptView.pictureForProfile;
+            
+        }
+        
+        
+    }
     
 }
 @end
