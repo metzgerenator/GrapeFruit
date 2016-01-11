@@ -8,6 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ProfilePhotoViewController : UIViewController
+@interface ProfilePhotoViewController : UIViewController<UIImagePickerControllerDelegate,UINavigationControllerDelegate>;
 
+
+@property (nonatomic, strong)UIImage *pictureForProfile;
+
+- (IBAction)chooseFromLibrary:(id)sender;
+
+- (IBAction)takePhoto:(id)sender;
 @end

@@ -34,6 +34,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     [self loadUserData];
 
     
@@ -45,7 +46,7 @@
 -(void)viewDidAppear:(BOOL)animated {
     
     
-    
+    NSLog(@"loading");
     
     
 }
