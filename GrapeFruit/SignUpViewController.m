@@ -33,22 +33,52 @@
     
 }
 
-//method for DOB text formatting
--(void)textFieldDidChange:(UITextField *)theTextField
+
+//format the date
+
+-(void)textFieldDidChange:(UITextField *)textField
 {
-    NSLog(@"text changed: %@", theTextField.text);
     
-    NSString *textFieldText = [theTextField.text stringByReplacingOccurrencesOfString:@"/" withString:@""];
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init] ;
+    if([textField.text length]==0)
+    {
+        [formatter setGroupingSeparator:@"-"];
+        [formatter setGroupingSize:4];
+        [formatter setUsesGroupingSeparator:YES];
+        [formatter setSecondaryGroupingSize:2];
+        NSString *num = textField.text ;
+        num= [num stringByReplacingOccurrencesOfString:@"-" withString:@""];
+        NSString *str = [formatter stringFromNumber:[NSNumber numberWithDouble:[num doubleValue]]];
+        textField.text=str;
+        NSLog(@"%@",str);
+    }
+    else {
+        [formatter setGroupingSeparator:@"-"];
+        [formatter setGroupingSize:2];
+        [formatter setUsesGroupingSeparator:YES];
+        [formatter setSecondaryGroupingSize:2];
+        NSString *num = textField.text ;
+        if(![num isEqualToString:@""])
+        {
+            num= [num stringByReplacingOccurrencesOfString:@"-" withString:@""];
+            NSString *str = [formatter stringFromNumber:[NSNumber numberWithDouble:[num doubleValue]]];
+            NSLog(@" str is %@", str);
+            
+            //stop editing
+            if (num.length > 4) {
+                [textField resignFirstResponder];
+                [self.phoneNumberTextField becomeFirstResponder];
+              
+            }
+            
+            
+            textField.text=str;
+        }
+        
+    }
     
-    
-    
-    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
-//    [formatter setNumberStyle:NSNumberFormatterDecimalStyle];
-    [formatter setNumberStyle:NSDateFormatterShortStyle];
-    
-    NSString *formattedOutput = [formatter stringFromNumber:[NSNumber numberWithInt:[textFieldText integerValue]]];
-    self.birthDateTextField.text=formattedOutput;
 }
+
 
 
 - (void)didReceiveMemoryWarning {
